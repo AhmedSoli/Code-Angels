@@ -1,0 +1,66 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="row pt-3">
+	<div class="col-4" style="text-align: center">
+		<a href="/requests/create" style="color:white">
+			<h3 class="m-1 card" style="background:url('static/images/ask_for_help.jpg');background-size: cover">
+				<div style="background: #FFCA3Acc;height:100%">
+						Request Application
+				</div>
+			</h3>
+		</a>
+		<p>If you have a good cause and need someone to develop code for free => CREATE A REQUEST</p>
+	</div>
+	<div class="col-4" style="text-align: center">
+		<a href="/angels" style="color:white">
+			<h3 class="m-1 card" style="background:url('static/images/angels.jpg');background-size: cover">
+				<div style="background: #8ac926cc;height:100%">
+						Browse Angels 
+				</div>
+			</h3>
+		</a>
+		<p>Get to know our Code Angels and find the perfect fit for your project.</p>
+	</div>
+	<div class="col-4" style="text-align: center">
+		<a href="/requests" style="color:white">
+			<h3 class="m-1 card" style="background:url('static/images/finished.jpg');background-size: cover">
+				<div style="background: #1982C4cc;height:100%">
+						Browse Requests
+				</div>
+			</h3>
+		</a>
+		<p>Explore active requests find your next calling!</p>
+	</div>
+</div>
+
+<div class="row pt-5">
+	<div class="col-6">
+		<h3>For Developers and Researches</h3>
+		<p>We want to give you the opportunity to write software for a good cause. There are many organisations around the globe who are trying to do good and help people but don't always have all the required resources. One way to assist these organisations is by developing software which helps them do their work more efficiently. We want to connect you with such organisation and help you do good in this world.</p>
+	</div>
+	<div class="col-6">
+		<h3>For Non-Profit Organisation and People in Need</h3>
+		<p>We want to help you find talented and motivated developers who are willing to advance your cause for free. Luckily there are many developers around the world who have extra time on their hand and who would love to help you out. We will find the perfect fit for your project and connect you with them. </p>
+	</div>		
+</div>
+
+
+<style>
+.center {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.card {
+	min-height:150px;
+	color:white;
+	font-size: 300%;
+}
+
+.card:hover {
+	opacity: 0.6;
+	cursor: pointer;
+}
+</style>
+{% endblock %}

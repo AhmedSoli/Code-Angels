@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div>
+	<div class="row">
+		<p class="pt-3 pb-3 mt-3 mb-3 alert alert-info center">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		</button>
+		Thank you for beleiving in our mission. <br>
+		People like you are the ones who make this world a better place! <br>
+		We love and appreciate you.
+		</p>
+	</div>
+	
+	<form action="/angels/store" method="POST">
+		{{ form.csrf_token }}
+		{% for field in form.errors %}
+		{% for error in form.errors[field] %}
+		    <div class="alert alert-danger">
+		    	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    		<span aria-hidden="true">&times;</span>
+				</button>
+		        <strong>Error!</strong> {{field}}: {{error}}
+		    </div>
+		{% endfor %}
+		{% endfor %}
+		<div class="form-group">
+			<label for="name">Name <span style="color:red">*</span></label>
+			<input class="form-control" id="name" placeholder="FirstName FamilyName" type="text" name="name"> 
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<div class="form-group">
+					<label for="bio">Bio</label>
+					<textarea class="form-control" id="bio" type="text" name="bio" placeholder="Tell us a little more about yourself. What types of projects are you willing to take on? What is your motivation for doing this? What are your skills." rows="3"></textarea>
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="form-group">
+					<label for="personal_website" style="display: block">Pick causes you wish to support</label>
+					<select class="custom-select" style="height:100%" multiple="True">
+						<option value="1">Children</option>
+						<option value="2">Women & Girls</option>
+						<option value="3">Health & Infectious Diseases</option>
+						<option value="1">Hunger & Nutrition</option>
+						<option value="2">Water & Sanitation</option>
+						<option value="3">Education</option>	
+						<option value="1">Agriculture & Farming</option>
+						<option value="2">Economic Development</option>
+						<option value="3">Research</option>
+					</select> 
+				</div>
+			</div>
+		</div>
+		
+		<div class="row">
+			<div class="col-6">
+				<div class="form-group">
+					<label for="github">Github</label>
+					<input class="form-control" id="github" placeholder="Link to your github account!" type="text" name="github"> 
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="form-group">
+					<label for="personal_website">Personal Website</label>
+					<input class="form-control" id="personal_website" placeholder="your_website.com" type="text" name="personal_website"> 
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<p class="text-muted">* required fields</p>
+		</div>
+
+		<div class="form-group" style="text-align: center">
+			<button type="submit" class="btn btn-outline-primary hover" style="font-size: 200%">Submit</button>
+		</div>
+	</form>
+</div>
+
+<style>
+	input {
+		font-size: 150%
+	}
+
+	.hover:hover {
+		cursor: pointer; 
+	}
+</style>
+{% endblock %}

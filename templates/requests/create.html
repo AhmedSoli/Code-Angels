@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div>
+	<div class="row">
+		<p class="pt-3 pb-3 mt-3 mb-3 alert alert-info center">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    <span aria-hidden="true">&times;</span>
+		</button>
+		The information collected through this form will help us at finding the perfect match for your task. <br>
+		Try to give as much information as possible about what software you need. <br>
+		Additionally please also make it clear why someone should support your cause. 
+		</p>
+	</div>
+	
+	<form action="/requests/store" method="POST">
+		{{ form.csrf_token }}
+		{% for field in form.errors %}
+		{% for error in form.errors[field] %}
+		    <div class="alert alert-danger">
+		    	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		    		<span aria-hidden="true">&times;</span>
+				</button>
+		        <strong>Error!</strong> {{field}}: {{error}}
+		    </div>
+		{% endfor %}
+		{% endfor %}
+		<div class="row">
+			<div class="col-6">
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input class="form-control" id="name" placeholder="Enter your name.." type="text" name="name"> 
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input class="form-control" id="email" placeholder="Enter your email..." type="email" name="email"> 
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-6">
+				<div class="form-group">
+					<label for="organisation_name">Organisation Name</label>
+					<input class="form-control" id="organisation_name" placeholder="What is the name of the organisation you are representing?" type="text" name="organisation_name"> 
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="form-group">
+					<label for="organisation_description">Organisation Description</label>
+					<textarea class="form-control" id="organisation_description" type="text" name="organisation_description" rows="3" placeholder="What is the goal of your organisation/work?"></textarea>
+				</div>
+			</div>
+		</div>
+		
+		
+			
+		<div class="row">
+			<div class="col-6">
+				<div class="form-group">
+					<label for="task_title">Task Title</label>
+					<input class="form-control" id="task_title" placeholder="Choose a title for your request.." type="text" name="task_title"> 
+				</div>
+			</div>
+			<div class="col-6">
+				<div class="form-group">
+					<label for="task_description">Task Description</label>
+					<textarea class="form-control" id="task_description" type="text" name="task_description" placeholder="You don't have to describe in detail. Just give people an idea and what kind of software you need" rows="3"></textarea>
+				</div>
+			</div>
+		</div>
+		
+
+		<div class="form-group" style="text-align: center">
+			<button type="submit" class="btn btn-outline-primary hover" style="font-size: 200%">Submit</button>
+		</div>
+	</form>
+</div>
+
+<style>
+	input {
+		font-size: 150%
+	}
+
+	.hover:hover {
+		cursor: pointer; 
+	}
+</style>
+{% endblock %}
