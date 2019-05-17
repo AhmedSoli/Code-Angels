@@ -17,6 +17,13 @@
 	<body style="background: white; font-family: 'VT323', monospace;">
 		<nav class="container">
 			<div class="row">
+					{% if breadcrumbs|length > 0 %}
+					{%- for breadcrumb in breadcrumbs -%}
+					<a href="{{ breadcrumb.url }}" class="nav-link">{{ breadcrumb.text }}</a>
+			    	<span class="nav-link">{{ '/' if not loop.last }}</span>
+					{%- endfor -%}
+					{%- endif -%}
+			
 				<ul class="nav" style="margin-left:auto">
 					<li class="nav-item">
 						<a class="nav-link" href="/angels/create">Become an Angel</a>
@@ -34,16 +41,7 @@
 			<div class="row">
 				<h6 class="center text-muted">Code for a Good Cause</h6>
 			</div>
-			<div class="row">
-				<div class="center">
-				{% if breadcrumbs|length > 0 %}
-				{%- for breadcrumb in breadcrumbs -%}
-				    <a href="{{ breadcrumb.url }}">{{ breadcrumb.text }}</a>
-				    {{ '/' if not loop.last }}
-				{%- endfor -%}
-				{%- endif -%}
-				</div>
-			</div>
+			
 		</nav>
 
 		<section class="container">

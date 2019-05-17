@@ -2,29 +2,28 @@
 
 {% block content %}
 <div class="row pt-3">
-	<div class="col-4" style="text-align: center">
-		<a href="/requests/create" style="color:white">
-			<h3 class="m-1 card" style="background:url('static/images/ask_for_help.jpg');background-size: cover">
-				<div style="background: #FFCA3Acc;height:100%">
-						Request Application
-				</div>
-			</h3>
-		</a>
-		<p>If you have a good cause and need someone to develop code for free => CREATE A REQUEST</p>
+	<div class="active-cyan-3 active-cyan-4 mb-4" style="width: 100%">
+	  <input class="form-control" type="text" placeholder="Search projects and angels ...." aria-label="Search" style="width: 100%">
 	</div>
-	<div class="col-4" style="text-align: center">
-		<a href="/angels" style="color:white">
-			<h3 class="m-1 card" style="background:url('static/images/angels.jpg');background-size: cover">
-				<div style="background: #8ac926cc;height:100%">
-						Browse Angels 
-				</div>
-			</h3>
-		</a>
-		<p>Get to know our Code Angels and find the perfect fit for your project.</p>
+</div>
+<div class="row pt-3">
+	<div class="col-6 border">
+		<h3>What is Code Angels?</h3>
+		<p>Code Angels is a platform for connecting software developers with non-profit organisations. Our goal is to help organisations do their work more efficiently without having to pay for the software. As a developer you get the chance to help make the world around you a better place.</p>
 	</div>
-	<div class="col-4" style="text-align: center">
+	<div class="col-6 border">
+		<h3>How can I use the platform?</h3>
+		<p>
+			<strong>Non-profit Organisations: </strong> You can submit requests and we will do our best to match you with one (or more) of our angels who will develop the software you requested.
+			<strong>Software Developers: </strong> First you need to create a profile. Next you can browse all active requests and apply for any of them. Alternatively we can send you projects based on your interests every other week and let you choose.<br>
+		</p>
+	</div>		
+</div>
+
+<div class="row pt-3" style="text-align: center">
+	<div class="col-6">
 		<a href="/requests" style="color:white">
-			<h3 class="m-1 card" style="background:url('static/images/finished.jpg');background-size: cover">
+			<h3 class="m-1 card">
 				<div style="background: #1982C4cc;height:100%">
 						Browse Requests
 				</div>
@@ -32,17 +31,16 @@
 		</a>
 		<p>Explore active requests find your next calling!</p>
 	</div>
-</div>
-
-<div class="row pt-5">
 	<div class="col-6">
-		<h3>For Developers and Researches</h3>
-		<p>We want to give you the opportunity to write software for a good cause. There are many organisations around the globe who are trying to do good and help people but don't always have all the required resources. One way to assist these organisations is by developing software which helps them do their work more efficiently. We want to connect you with such organisation and help you do good in this world.</p>
+		<a href="/angels" style="color:white">
+			<h3 class="m-1 card">
+				<div style="background: #8ac926cc;height:100%">
+						Browse Angels 
+				</div>
+			</h3>
+		</a>
+		<p>Get to know our Code Angels and find the perfect fit for your project.</p>
 	</div>
-	<div class="col-6">
-		<h3>For Non-Profit Organisation and People in Need</h3>
-		<p>We want to help you find talented and motivated developers who are willing to advance your cause for free. Luckily there are many developers around the world who have extra time on their hand and who would love to help you out. We will find the perfect fit for your project and connect you with them. </p>
-	</div>		
 </div>
 
 
@@ -53,9 +51,8 @@
 }
 
 .card {
-	min-height:150px;
 	color:white;
-	font-size: 300%;
+	font-size: 250%;
 }
 
 .card:hover {
